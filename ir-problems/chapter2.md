@@ -1,7 +1,7 @@
 <script>
 MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    inlineMath: [['$', '$'], ['\$', '\$']]
   },
   svg: {
     fontCache: 'global'
@@ -13,93 +13,90 @@ MathJax = {
 </script>
 
 
-# Morfología
+# Morphology
 
 ## Problema resuelto 1
 
 ![](.gitbook/assets/p1%20%281%29.svg)
 
-El mecanismo de la figura consiste en una transmisión del tipo paralelogramo para mover una articulación de un robot.
+The mechanism of the figure consists of a parallelogram transmission moving the joint of a robot.
 
-La distancia entre el eje del motor-husillo y el soporte de la articulación permanece constante a 250 mm, siendo extensible el brazo que aparece a la izquierda de la articulación para mantener esa distancia constante.
+The distance between the axis of the motor-spindle and the support of the joint remains constant at 250 mm, being the arm that appears to the left of the joint extensible to maintain that distance constant.
 
-El paralelogramo es movido por un motor AC con resolver, cuyo par máximo es de 0,3 N·m.
+The parallelogram is moved by an AC motor with resolver, whose maximum torque is 0.3 N·m.
 
-Este conjunto motor-husillo ofrece una relación de reducción de 2000 m⁻¹ que permite transformar el movimiento de giro del motor en movimiento de traslación del husillo, con un rendimiento del 80%.
+This motor-spindle assembly offers a reduction ratio of 2000 m-¹ which allows the transformation of the motor's rotation into the translation movement of the spindle, with an efficiency of 80%.
 
-1. Calcular el peso máximo _Q_ que puede soportar el mecanismo en su extremo.
-2. Obtener la relación entre el ángulo girado por el motor $\theta_m$ y el ángulo girado por la articulación $\theta _{art}$.
-3. Sabiendo que las ecuaciones del resolver son:
+The equations of the resolver are:
 
-   * $V1 = V\cdot\sin(\omega t)\cdot\sin(\theta_m)$
-   * $V2 = V\cdot\sin(\omega t)\cdot\cos(\theta _m)$
+* $V1 = V\cdot\sin(\omega t)\cdot\sin(\theta_m)$,
+* $V2 = V\cdot\sin(\omega t)\cdot\cos(\theta _m)$,
 
-   Siendo \(\theta_m\) el ángulo en que está situado el motor y $V\cdot\sin(\omega t)$ la tensión de excitación de la bobina móvil del resolver con $V$=24V.
+being $\theta_m$ the angle in which the motor is located and $V\cdot(\omega t)$ the excitation voltage of the resolver moving coil with $V$=24V. The resolver initial values are set to $V1$=0V , $V2$=0V , $\theta_m$=0 , $\theta_{art}$=0.
 
-   Si partimos de $V1$=0V , $V2$=0V , $\theta_m$=0 , $\theta_{art}$=0 , el motor avanza en sentido positivo dando 150 vueltas dando unos valores finales en el instante de parada de $V1$=11.91V , $V2$=10V.
+1. Calculate the maximum weight _Q_ that the mechanism can hold at its end.
+2. Obtain the relation between the angle turned by the motor $\theta_m$ and the angle turned by the joint $\theta _{art}$.
+3. If the motor advances in positive direction giving 150 turns with final values in the stop instant of $V1$=11.91V , $V2$=10V. What is the value of $\theta _{art}$ at the stopping point if the zero position is the one drawn?
+4. What would be the range of the joint if the maximum length of the extension arm is 600 mm?
 
-   ¿Cual es el valor de $\theta _{art}$ en el punto de parada si la posición cero es la que aparece dibujada?
+## Solution
 
-4. ¿Cual sería el rango de la articulación si la máxima longitud del brazo extensible es de 600 mm?
+### Section 1
 
-## Solución
-
-### Apartado 1
-
-El brazo extensible tiene en su longitud mínima cuando el brazo está en la posición inicial, así que la posición más desfavorable será la posición inicial. Se deja como ejercicio la demostración.
+The extension arm is at its minimum length when the arm is in the initial position, so the most unfavorable position will be the initial position.
 
 ![](.gitbook/assets/p1_1%20%281%29.svg)
 
-En el equilibrio, $T1$ y $T2$ son iguales y de sentido contrario \($T1 = -T2$\) , siendo:
+In the equilibrium, $T1$ and $T2$ are equal and opposite ($T1 = -T2$) , being:
 
 * $T1 = Q \cdot 1,2$
 * $T2 = F \cdot -0,25$ N·m
 
-Dividiendo las ecuaciones anteriores, se obtiene:
+Dividing the above equations, it is obtained:
 
 $
 -1 = {Q \over F} \cdot {1,2 \over -0,25} ;\quad {F} = {4,8 \cdot Q}
 $
 
-Por otro lado, el balance de fuerzas en el husillo se puede hacer de manera fácil mediante un balance de energía.
+On the other hand, the balance of forces in the spindle can be easily done by an energy balance.
 
-En la situación ideal, la energía transmitida por el motor al husillo, debe ser la misma que la recibida por el brazo. Esto es, $E_{rot} = E_{lin}$ , y en el caso general $\eta \cdot E_{rot} = E_{lin}$, siendo:
+In the ideal situation, the energy transmitted by the motor to the spindle should be the same as that received by the arm. That is, $E_{rot} = E_{lin}$ , and in the general case $\eta \cdot E_{rot} = E_{lin}$, being:
 
-* $E_{rot} = M \cdot \theta_m$, siendo $\theta$ el ángulo de giro en radianes.
-* $E_{lin} = F \cdot d$ , siendo $d$ la distancia lineal recorrida por el husillo.
+* $E_{rot} = M \cdot \theta_m$, where $\theta$ is the angle of rotation in radians.
+* $E_{lin} = F \cdot d$ , where $d$ is the linear distance traveled by the spindle.
 
-Se presentan dos incógnitas para $Q$. Una es el peso que el robot es capaz de _soportar_ en su extremo, y la otra el peso que es capaz de _mover_.
+There are two unknowns for $Q$. One is the weight that the robot is capable of _supporting_ at its end, and the other is the weight that it is capable of _moving_.
 
-La primera se resuelve mediante el balance de energía para el caso ideal, ya que es una situación estática, en la que $E_{rot} = E_{lin}$. Se deja como ejercicio.
+The first one is solved by the energy balance for the ideal case, since it is a static situation, in which $E_{rot} = E_{lin}$. It is left as an exercise.
 
-La segunda se resuelve dividiendo las dos ecuaciones de energía, teniendo en cuenta que $\eta ={ E_{lin} \over E_{rot} }={ 0,8 }$ :
+The second is solved by dividing the two energy equations, taking into account that $ \eta ={ 0.8 } $ :
 
 $
 \eta = {E_{lin} \over E_{rot}} ={ {F \cdot d} \over {M \cdot \theta_m} }; \quad F = {\theta \over d} \cdot M \cdot \eta
 $
 
-Según el enunciado, ${\theta \over d}$ = 2000 m⁻¹. Como no se especifica, se asume que la transmisión está expresada en rad/m.
+According to the statement, ${\theta \over d}$ = 2000 m-¹. As it is not specified, it is assumed that the transmission is expressed in rad/m.
 
-Para resolver el apartado, sustituimos los valores:
+To solve the section, we substitute the values:
 
 $
 F = {\theta \over d} \cdot M \cdot \eta = 2000 \cdot 0.3 \cdot 0.8 = F = 480 N
 $
 
-Y como $F = 4.8 \cdot Q$, $Q = {F \over 4.8} = {480 \over 4.8} = 100 N \approx 10Kg$.
+And as $F = 4.8 \cdot Q$, $Q = {F \over 4.8} = {480 \over 4.8} = 100 N \approx 10Kg$.
 
 ### Apartado 2
 
-La transmisión del husillo tiene la relación ${d \over \theta_m} = {1\over2000}$ m/rad. Ahora se calcula la relación entre $d$ y $\theta_{art}$.
+The spindle transmission has the ratio ${d \over \theta_m} = {1\over2000}$ m/rad. Now the relationship between $d$ and $\theta_{art}$ is calculated.
 
 ![](.gitbook/assets/p1_2%20%281%29.svg)
 
-De acuerdo con la figura, las ecuaciones trigonométricas que relacionan $d$ con $\theta_{art}$ son
+According to the figure, the trigonometric equations that relate $d$ to $\theta_{art}$ are
 
 * $h\cdot\sin{\theta_{art}} = d$
 * $h\cdot\cos{\theta_{art}} = 0,25$
 
-Dividiendo estas dos ecuaciones, resulta:
+Dividing these two equations, it results:
 
 $
 \tan{\theta_{art}} = {d \over 0,25} \quad ; \quad
@@ -115,7 +112,7 @@ $
 
 ### Apartado 3
 
-Dividiendo las ecuaciones del resolver resulta que:
+Dividing the equations of the resolver results in:
 
 $
 { { {V1 = V\cdot\sin(\omega t)\cdot\sin(\theta_m)}\over{
@@ -123,159 +120,146 @@ V2 }={ V\cdot\sin(\omega t)\cdot\cos(\theta _m)} } }\quad;\quad
 { {V1 \over V2} ={ \tan(\theta _m) } }
 $
 
-Como únicamente se conocen los valores instantáneos de $V1$ y $V2$ a la parada, no se puede saber a priori si están en fase con la sinusoidal de referencia del resolver.
+Since only the instantaneous values of $V1$ and $V2$ are known at stop, it is not possible to know a priori if they are in phase with the reference sine wave of the resolver.
 
-Se asume que sí lo están, de manera que los valores de $\sin(\theta_m)$ y $\cos(\theta_m)$ son ambos positivos, lo que implica que el ángulo de giro debe estar en el primer cuadrante.
+It is assumed that they are, so the values of $\sin(\theta_m)$ and $\cos(\theta_m)$ are both positive, which implies that the rotation angle must be in the first quadrant.
 
-Sustituyendo, el valor actual de $\theta _m$ resulta:
-
-$
-{ {V1 \over V2} ={ \tan(\theta _m) } }= {11,91/10} = {1,191}\quad\rightarrow\quad
-{\theta _m} = {\arctan(1,191)}= {0,87 \ rad \approx 50\deg}
-$
-
-Como hay 150 vueltas \($942,48 \ rad$\) anteriores, el valor del ángulo final es $943,35 \ rad$
-
-Al sustituir éste valor la ecuación anterior resulta un ángulo de :
+Substituting, the current value of $\theta _m$ results:
 
 $
-{\theta_{art}} = {\arctan {943,35 \ rad \over 500}} \quad\rightarrow\quad
-{\theta_{art}} = {1,08 \ rad = 62,08\deg}
+{ {V1 \over V2} ={ \tan(\theta _m) } }= {11.91 \over 10} = {1.191}\quad\rightarrow\quad
+{\theta _m} = {\arctan(1.191)}= {0.87 \ rad \approx 50\deg}
+$
+
+As there are $150$ turns ($942.48$ rad) above, the value of the final angle is $943.35$ rad
+
+Substituting this value for the above equation results in an angle of :
+
+$
+{\theta_{art}} = {\arctan {943.35 \ rad \over 500}} \quad\rightarrow\quad
+{\theta_{art}} = {1.08 \ rad = 62.08\deg}
 $
 
 ### Apartado 4
 
-Teniendo en cuenta que $h\cdot\cos{\theta_{art}} = 0,25$ \(ver el apartado 2\), y sustituyendo el valor de h por 600 mm \(0,6 m\) resulta:
+Taking into account that $h\cdot\cos({\theta_{art}}) = 0.25$ (see section 2), and replacing the value of h by 600 mm (0.6 m) results:
 
 $
 {\cos(\theta_{art})} = 0,42\quad\rightarrow\quad
 \theta_{art} = 1,14 \ rad = 65,38\deg \approx 65\deg
 $
 
-Lo que significa que el rango de la articulación es de \(-65º,+65º\).
-
-## Problema resuelto 2
+This means that the range of the joint is ($-65$ deg,$+65$ deg).
+## Problem 2
 
 ![](.gitbook/assets/problema2%20%281%29.png)
 
-Dado el robot de 5 GDL de la figura, calcular:
+Given the 5 DOF robot in the figure, calculate:
 
-* a\) La articulación 3 \(q3\) se mueve mediante un conjunto Motor AC - Freno - Harmonic Drive, siendo los datos de este último: relación de reducción 120:1, rendimiento del 93%.
-  1. Si la carga estática máxima que ha de transportar el robot es de 80 Newton, ¿cual debe ser el par máximo \(N·m\) que debe soportar un freno situado en el eje del motor, aplicando un coeficiente de seguridad del 30%?
-  2. Si el motor gira a 900 rpm, ¿a que velocidad está girando la articulación?.
-* b\) La articulación 1 \(q1\) se mueve mediante un conjunto Motor AC - Freno - Resolver - Harmonic Drive - Transmisión piñón cremallera. El harmonic drive tiene una relación 175:1 y un rendimiento del 95%. En la transmisión piñón-cremallera, el radio efectivo del piñón es de 0,3 m y su rendimiento del 75%. Las ecuaciones del resolver son las siguientes:
+* a) The joint 3 ($q_3$) is moved by an AC Motor - Brake - Harmonic Drive assembly, being the data of the latter: reduction ratio 120:1, efficiency of 93%.
+    1. If the maximum static load to be carried by the robot is 80 Newton, what should be the maximum torque (N·m) to be supported by a brake located on the motor axis, applying a safety coefficient of 30%?
+    2. If the motor is rotating at 900 rpm, at what speed is the joint rotating?
+* b) Joint 1 ($q_1$) is moved by an AC Motor - Brake - Resolver - Harmonic Drive - Rack and Pinion Transmission assembly. The Harmonic Drive has a ratio of $175:1$ and an efficiency of 95%. In the rack and pinion drive, the effective radius of the pinion is 0.3 m and its efficiency is 75%. Being $\theta_m$ the angle in which the motor is located and the excitation voltage of the resolver moving coil with $V=24$V.
 
-  $V1 = V\cdot\sin(\omega t)\cdot\sin(\theta_m);$ $V2 = V\cdot\sin(\omega t)\cdot\cos(\theta _m)$
+    1. If we start from $\theta_m$=0 , and the motor advances in positive direction, indicating the resolver 350 steps by zero, giving final values in the stop instant of $V1$=17.32V , $V2$=10V. What is the value of $q_1$ in the stop point?
+    2. What will be the linear speed of the joint if the motor turns at 110 rpm?
 
-  Siendo $\theta_m$ el ángulo en que está situado el motor y $V\cdot\sin(\omega t)$ la tensión de excitación de la bobina móvil del resolver con $V$=24V.
+## Solution
 
-  1. Si se parte de $V1$=0V , $V2$=0V , $\theta_m$=0 , y el motor avanza en sentido positivo, indicando el resolver 350 pasos por cero, dando unos valores finales en el instante de parada de $V1$=17.32V , $V2$=10V. ¿Cual es el valor de q1 en el punto de parada?
-  2. ¿Cual será la velocidad lineal de la articulación si el motor gira a 110 rpm?
+### Section a1
 
-## Solución
+If the maximum load is 80N, applying a safety coefficient of $30\%$, the considered load results in $P=1.3\cdot80N=104N$.
 
-### Apartado a1
-
-Si la carga máxima es de 80N, aplicando un coeficiente de seguridad del 30%, la carga de cálculo resulta $P=1,3*80N=104N$.
-
-La posición mas desfavorable para q3 es la que se muestra en la figura, y se corresponde con el ángulo q3=0º.
+The worst position for $q_3$ is the one shown in the figure, and corresponds to the angle $q_3=0$ deg and $q_4=-90$ deg.
 
 ![](.gitbook/assets/p2_1.svg)
 
-Es claro que el momento en q3 será $M_3=P*d$, por lo tanto $M_3 = 104*d$.
+It is clear that the time in q3 will be $M_3=P(d+e)$, therefore $M_3 = 104(d+e)$.
 
-Para detener la articulación mediante el freno, hay que tener en cuenta la relación de transimsión, pero no el rendimiento de la transimsión, ya que las pérdidas por fricción requieren que haya movimiento. Dividiendo las dos ecuaciones de energía, y teniendo en cuenta que $\eta ={ E_{3} \over E_{m3} }={ 1 }$ resulta que:
+To stop the joint by means of the brake, the transmission ratio must be taken into account, but since friction losses will help to stop the motor, we can neglect them to make our brake safer. Dividing the two energy equations, and taking $\eta ={ 1 }$ it turns out:
 
 $
 \eta = {E_{3} \over E_{m3}} ={ {M_3 \cdot \theta_{3}} \over {M_{m3} \cdot \theta_{m3}} } \quad;\quad M_{m3} = { {M_3 \over \eta} \cdot {\theta_{3} \over \theta_{m3} }  }
 $
 
-Para resolver, se sustituyen los valores:
+To solve, the values are replaced:
 
 $
-M_{m3} = { {104*d \over 1} \cdot {1 \over 120 }  } = {0,87*d} \quad  [\text N\cdot \text m]
+M_{m3} = { {104(d+e) \over 1} \cdot {1 \over 120 }  } = {0,87(d+e)} \quad  [\text N\cdot \text m]
 $
 
-### Apartado a2
+### Section a2
 
-Para cualquier periodo de tiempo $t$ ocurre que:
-
-$
-q_{3} = \dot q_{3}*t ;\quad
-q_{m3} = \dot q_{m3}*t ;
-$
-
-Dividiendo las dos ecuaciones, resulta:
+Using gear transmission ratio $N=120$:
 
 $
-{q_{3} \over q_{m3} } = {\dot q_{3} \over \dot q_{m3} };\quad 
-{\dot q_{3}} = {\dot q_{m3} * {q_{3} \over q_{m3} } }=
-{\dot q_{m3} * {R_3^{-1} } }
+N={q_{i} \over q_{o} } = {\dot q_{m3} \over \dot q_{3} } ;\quad
+{\dot q_{3}} = {\dot q_{m3}  \over N  }
 $
 
-Y sustituyendo, el resultado es:
+And substituting, the result is:
 
 $
-\dot q_{3} = {900\text{[rpm]}*{1 \over 120} } = {7,5} \text{[rpm]}
+\dot q_{3} = {900\text{[rpm]} \over 120 } = {7,5} \text{[rpm]}
 $
 
-### Apartado b1
+### Section b1
 
-Dividiendo las ecuaciones del resolver resulta que:
+Dividing the equations of the resolver results in:
 
 $
-{ {V1 \over V2} ={ \tan(\theta _m) } }
+{ {V1 \over V2} ={ \tan(\theta _m) } ={17.32 \over 10}}
 $
 
-Suponiendo que la sinusoidal está en fase \(como en el problema 1\), y sustituyendo, el valor actual de $\theta _m$ resulta:
+Assuming that the sinusoidal is in positive phase, and substituting, the current value of $\theta _m$ results:
 
 $
 {\theta _m} = {\arctan(1,732)}= {1,047 \ rad \approx 60\deg}
 $
 
-Como se han contado 350 vueltas \($2199,11[rad]$\) , el valor del ángulo final en el eje del motor es $q_{m1}=2200,16[rad]$  
-La relación de transmisión del harmonic drive es de 175:1, por lo que el ángulo final en el eje de salida del harmonic es de $q_{h1}={2200,16/175}=12,57[rad]$
+Since 350 turns have been counted $2199.11[\text{rad}]$ , the value of the final angle on the motor axis is $q_{m1}=2200.16[rad]$
+The harmonic drive ratio is $175:1$, so the final angle on the harmonic output shaft is $q_{h1}={2200.16/175}=12.57 [rad]$
 
-Ahora, la transmisión del piñón-cremallera tiene un radio efectivo del piñón de 0,3\[m\], lo que significa que la relación de transmisión es de $R_p=0,3[m/rad]$.
+Now, the rack-and-pinion transmission has an effective pinion radius of 0.3 [m], which means that the transmission ratio is $R_p=0.3 [m/rad]$.
 
-El eje de salida del harmonic drive está aplicado al eje de entrada de la transmisión piñón-cremallera, lo que significa que:
-
-$
-q_1=R_p*q_{h1}
-$
-
-O lo que es lo mismo:
+The output shaft of the harmonic drive is applied to the input shaft of the rack-pinion transmission, which means that
 
 $
-q_1=0,3[m/rad]*12,57[rad]=3,77[m]
+q_1=R_p \cdot q_{h1}
+$
+
+Which means:
+
+$
+q_1=0.3\text{[m/rad]} \cdot 12.57[rad]=3.77[m]
 $
 
 ### Apartado b2
 
-De manera similar al aparatado anterior \(la demostración se propone como ejercicio\), se puede decir que:
+In a similar way to the previous section a2, it can be said that
 
 $
-v_1=R_p*R_h*v_{m1}=R*v_{m1}
+v_1=R_p R_h v_{m1}=R v_{m1}
 $
 
-Y sustituyendo los valores correspondientes, el resultado es:
+And substituting the corresponding values, the result is
 
 $
-v_1={0,3\over175}[m/rad]*115,19[rad/s]=0,20[m/s]
+v_1={0,3\over175}[m/rad] \cdot 115,19[rad/s]=0,20[m/s]
 $
 
 ## Problema resuelto 3
 
 ![](.gitbook/assets/p3.svg)
 
-Para el robot de 2 GDL \($\theta_1$ y $\theta_2$\) de la figura anterior, diseñar los actuadores y sensores. Estos están compuestos, en cada eje, por un motor DC con encoder en su eje y un engranaje. Calcular:
+Para el robot de 2 GDL $$\theta_1$ y $\theta_2$$ de la figura anterior, diseñar los actuadores y sensores. Estos están compuestos, en cada eje, por un motor DC con encoder en su eje y un engranaje. Calcular:
 
 1. Las reducciones que tienen que tener los reductores, si se conoce que:
    * La velocidad máxima de los motores. $\dot\theta_{mi}=6000 \text{[rpm]}$.
-   * Al mover cada motor por separado \(estando el otro parado\), la velocidad máxima de la trayectoria en el extremo del robot. $V_{max}=3000 \text{[mm/seg]}$.
-2. La resolución que tienen que tener los encoders de los ejes si se desea una precisión total de posicionamiento en el extremo de 0,01 \[mm\] \(los reductores son de juego cero\).
+   * Al mover cada motor por separado $estando el otro parado$, la velocidad máxima de la trayectoria en el extremo del robot. $V_{max}=3000 \text{[mm/seg]}$.
+2. La resolución que tienen que tener los encoders de los ejes si se desea una precisión total de posicionamiento en el extremo de 0,01 \[mm\] $los reductores son de juego cero$.
 3. El máximo peso que puede levantar el robot en su extremo en las condiciones mas desfavorables, si se conoce que:
-   * El par motor nominal \(continuo\) de cada motor es de $T_1=T_2=1$N·m.
+   * El par motor nominal $continuo$ de cada motor es de $T_1=T_2=1$N·m.
    * El coeficiente de aprovechamiento de los reductores es de $\eta=80\%$.
    * Los motores no tienen frenos.
 
@@ -289,7 +273,7 @@ $
 \dot\theta_{mi}*R_i=\dot\theta_i
 $
 
-Por otra parte, la velocidad lineal en el extremo opuesto a la articulación se calcula mediante la fórmula de movimiento circular del sólido rígido \($V_p=\dot\theta_i*d$\), siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido.
+Por otra parte, la velocidad lineal en el extremo opuesto a la articulación se calcula mediante la fórmula de movimiento circular del sólido rígido $$V_p=\dot\theta_i*d$$, siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido.
 
 Combinando las dos ecuaciones, se obtiene lo siguiente:
 
@@ -297,7 +281,7 @@ $
 V_p=\dot\theta_{mi}*R_i*d
 $
 
-Hay que prestar atención al hecho de que $d$ se refiere a la distancia del punto\($i$\) al eje de rotación, por tanto, una rotación en q1 genera velocidades lineales en todos los puntos del robot, y en particular $V_1$ y $V_2$.
+Hay que prestar atención al hecho de que $d$ se refiere a la distancia del punto$$i$$ al eje de rotación, por tanto, una rotación en q1 genera velocidades lineales en todos los puntos del robot, y en particular $V_1$ y $V_2$.
 
 El caso más desfavorable para $\theta_1$, coincide con el valor máximo de $d$, y esto ocurre con $\theta_2=0 \rightarrow d=1,2+2=3,2\text{[m]}$, y la velocidad en el extremo del robot, $V_2$. Particularizando la ecuación para este caso sería:
 
@@ -341,7 +325,7 @@ $
 
 ### Apartado 2
 
-El desplazamiento $X$ se calcula mediante la fórmula de movimiento circular del sólido rígido \($X_p=\theta_i*d$\), siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido. Teniendo en cuenta la reducción y el límite de desplazamiento resulta:
+El desplazamiento $X$ se calcula mediante la fórmula de movimiento circular del sólido rígido $$X_p=\theta_i*d$$, siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido. Teniendo en cuenta la reducción y el límite de desplazamiento resulta:
 
 $
 {X_p}={ \theta_{mi}*R_i*d }\le{ X_{min} }
@@ -353,9 +337,9 @@ $
 { \theta_{mi} }\le{ {X_{min}}\over{R_i*d} }
 $
 
-La situación más desfavorable es la que provoca un desplazamiento mayor en el extremo \($X_2$\). Igual que en el apartado anterior, las distancias mas desfavorables son $d=3,2\text{[m]}$ para $\theta_1$ y $d=2\text{[m]}$ para $\theta_2$.
+La situación más desfavorable es la que provoca un desplazamiento mayor en el extremo $$X_2$$. Igual que en el apartado anterior, las distancias mas desfavorables son $d=3,2\text{[m]}$ para $\theta_1$ y $d=2\text{[m]}$ para $\theta_2$.
 
-Particularizando para $\theta_{m1}$, \($d=3,2\text{[m]}; {R_1}={1/700}$\)
+Particularizando para $\theta_{m1}$, $$d=3,2\text{[m]}; {R_1}={1/700}$$
 
 $
 { \theta_{m1} }\le
@@ -364,7 +348,7 @@ $
 2,19\times10^{-03}\text{[rad]}
 $
 
-Particularizando para $\theta_{m2}$, \($d=2\text{[m]}; {R_2}={1/500}$\)
+Particularizando para $\theta_{m2}$, $$d=2\text{[m]}; {R_2}={1/500}$$
 
 $
 { \theta_{m2} }\le
@@ -373,7 +357,7 @@ $
 2,50\times10^{-03}\text{[rad]}
 $
 
-El menor de los dos valores \( $2,19\times10^{-03}\mathrm{[rad]}$ \) corresponde a la precisión mínima del encoder.
+El menor de los dos valores $ $2,19\times10^{-03}\mathrm{[rad]}$ $ corresponde a la precisión mínima del encoder.
 
 Como hay 6,28 \[rad\] en cada vuelta completa y el menor de los valores es $\theta_{m1}= 2,19\times10^{-03}\text{[rad]}$:
 
@@ -444,9 +428,9 @@ $
 El robot de la figura se mueve mediante un conjunto motor-encoder-reductor. El motor es de tipo AC, cuyo par máximo es de 1 \[N·m\], y la velocidad máxima es de 10000 rpm. El reductor es del tipo Harmonic Drive con relación d reducción de 150:1 y rendimiento del 90%.El encoder tiene 100 cuentas por vuelta. La distancia entre el eje del motor y el extremo del robot $l$ es de 1 \[m\].  
 Se pide:
 
-* a\) Calcular el peso máximo $Q$ que puede llevar el robot en su extremo.
-* b\) Calcular la resolución lineal del movimiento en el extremo del robot.
-* c\) Si el motor gira a su velocidad máxima, ¿a qué velocidad angular \(en \[grados/s\]\) está girando la articulación?
+* a) Calcular el peso máximo $Q$ que puede llevar el robot en su extremo.
+* b) Calcular la resolución lineal del movimiento en el extremo del robot.
+* c) Si el motor gira a su velocidad máxima, ¿a qué velocidad angular $en \[grados/s\]$ está girando la articulación?
 
 ## Solución
 
