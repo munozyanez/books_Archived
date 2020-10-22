@@ -252,16 +252,16 @@ $
 
 ![](.gitbook/assets/p3.svg)
 
-Para el robot de 2 GDL $$\theta_1$ y $\theta_2$$ de la figura anterior, diseñar los actuadores y sensores. Estos están compuestos, en cada eje, por un motor DC con encoder en su eje y un engranaje. Calcular:
+Para el robot de 2 GDL $\theta_1$ y $\theta_2$ de la figura anterior, diseñar los actuadores y sensores. Estos están compuestos, en cada eje, por un motor DC con encoder en su eje y un engranaje. Calcular:
 
 1. Las reducciones que tienen que tener los reductores, si se conoce que:
-   * La velocidad máxima de los motores. $\dot\theta_{mi}=6000 \text{[rpm]}$.
-   * Al mover cada motor por separado $estando el otro parado$, la velocidad máxima de la trayectoria en el extremo del robot. $V_{max}=3000 \text{[mm/seg]}$.
+    * La velocidad máxima de los motores. $\dot\theta_{mi}=6000 \text{[rpm]}$.
+    * Al mover cada motor por separado estando el otro parado, la velocidad máxima de la trayectoria en el extremo del robot. $V_{max}=3000 \text{[mm/seg]}$.
 2. La resolución que tienen que tener los encoders de los ejes si se desea una precisión total de posicionamiento en el extremo de 0,01 \[mm\] $los reductores son de juego cero$.
 3. El máximo peso que puede levantar el robot en su extremo en las condiciones mas desfavorables, si se conoce que:
-   * El par motor nominal $continuo$ de cada motor es de $T_1=T_2=1$N·m.
-   * El coeficiente de aprovechamiento de los reductores es de $\eta=80\%$.
-   * Los motores no tienen frenos.
+    * El par motor nominal $continuo$ de cada motor es de $T_1=T_2=1$N·m.
+    * El coeficiente de aprovechamiento de los reductores es de $\eta=80\%$.
+    * Los motores no tienen frenos.
 
 ## Solución
 
@@ -270,7 +270,7 @@ Para el robot de 2 GDL $$\theta_1$ y $\theta_2$$ de la figura anterior, diseñar
 Para ambas articulaciones, se debe cumplir que:
 
 $
-\dot\theta_{mi}*R_i=\dot\theta_i
+\dot\theta_{mi}R_i=\dot\theta_i
 $
 
 Por otra parte, la velocidad lineal en el extremo opuesto a la articulación se calcula mediante la fórmula de movimiento circular del sólido rígido $$V_p=\dot\theta_i*d$$, siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido.
@@ -278,7 +278,7 @@ Por otra parte, la velocidad lineal en el extremo opuesto a la articulación se 
 Combinando las dos ecuaciones, se obtiene lo siguiente:
 
 $
-V_p=\dot\theta_{mi}*R_i*d
+V_p=\dot\theta_{mi}R_i \cdot d
 $
 
 Hay que prestar atención al hecho de que $d$ se refiere a la distancia del punto$$i$$ al eje de rotación, por tanto, una rotación en q1 genera velocidades lineales en todos los puntos del robot, y en particular $V_1$ y $V_2$.
@@ -286,17 +286,17 @@ Hay que prestar atención al hecho de que $d$ se refiere a la distancia del punt
 El caso más desfavorable para $\theta_1$, coincide con el valor máximo de $d$, y esto ocurre con $\theta_2=0 \rightarrow d=1,2+2=3,2\text{[m]}$, y la velocidad en el extremo del robot, $V_2$. Particularizando la ecuación para este caso sería:
 
 $
-{V_2}={\dot\theta_{m1}*R_1*3,2}
+{V_2}={\dot\theta_{m1}R_1 \cdot 3,2}
 $
 
 Sustituyendo valores, y teniendo en cuenta que $V_2\le V_{max}$ y que $\dot\theta_{m1}=6000 \text{[rpm]}=628,32 \text{[rad/s]}$ resulta:
 
 $
-{V_2}={628,32\text{[rad/s]}*R_1*3,2\text{[m]}}\le{3 \text{[m/s]}}
+{V_2}={628,32\text{[rad/s]}R_1\cdot3,2\text{[m]}}\le{3 \text{[m/s]}}
 $
 
 $
-{R_1}\le{ {3\text{[m/s]}}\over{628,32\text{[rad/s]}*3,2\text{[m]}} }={ {1}\over{670,21} }
+{R_1}\le{ {3\text{[m/s]}}\over{628,32\text{[rad/s]}3,2\text{[m]}} }={ {1}\over{670,21} }
 $
 
 $
@@ -306,13 +306,13 @@ $
 Para $\theta_2$, la distancia del punto más alejado es $d=2\text{[m]}$, y la velocidad en el extremo sigue siendo $V_2$. Particularizando la ecuación para este caso sería:
 
 $
-{V_2}={\dot\theta_{m2}*R_2*2}
+{V_2}={\dot\theta_{m2}R_2 \cdot 2}
 $
 
 Sustituyendo valores, y teniendo en cuenta que $V_2\le V_{max}$ y que $\dot\theta_{m2}=6000 \text{[rpm]}=628,32 \text{[rad/s]}$ resulta:
 
 $
-{V_2}={628,32\text{[rad/s]}*R_2*2\text{[m]}}\le{3 \text{[m/s]}}
+{V_2}={628,32\text{[rad/s]}R_2 \cdot 2\text{[m]}}\le{3 \text{[m/s]}}
 $
 
 $
