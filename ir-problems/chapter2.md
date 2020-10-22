@@ -168,24 +168,24 @@ Given the 5 DOF robot in the figure, calculate:
 
 ### Section a1
 
-If the maximum load is 80N, applying a safety coefficient of $30\%$, the considered load results in $P=1.3\cdot80N=104N$.
+If the maximum load is $Q=80N$, applying a safety coefficient of $30\%$, the considered load results in $P=1.3\cdot80N=104N$.
 
-The worst position for $q_3$ is the one shown in the figure, and corresponds to the angle $q_3=0$ deg and $q_4=-90$ deg.
+The worst position for $q_3$ is the one shown in the figure, and corresponds to the angle $q_3=0$ deg and $q_4=90$ deg.
 
 ![](.gitbook/assets/p2_1.svg)
 
-It is clear that the time in q3 will be $M_3=P(d+e)$, therefore $M_3 = 104(d+e)$.
+Torque in $q_3$ will be $M_3=P(d+e)$, therefore $M_3 = 104(d+e)$.
 
-To stop the joint by means of the brake, the transmission ratio must be taken into account, but since friction losses will help to stop the motor, we can neglect them to make our brake safer. Dividing the two energy equations, and taking $\eta ={ 1 }$ it turns out:
+To stop the joint by means of the brake, the transmission ratio must be considered, but in brake condition, the gear input is on the side of the joint and the output on the side of the motor. Note that friction losses will help to stop the motor. Dividing the two energy equations, and taking $\eta ={ 0.93 }$, results in:
 
 $
-\eta = {E_{3} \over E_{m3}} ={ {M_3 \cdot \theta_{3}} \over {M_{m3} \cdot \theta_{m3}} } \quad;\quad M_{m3} = { {M_3 \over \eta} \cdot {\theta_{3} \over \theta_{m3} }  }
+\eta = {E_{o} \over E_{i}} = {E_{m3} \over E_{3}} ={ {M_{m3} \cdot \theta_{m3}} \over {M_{3} \cdot \theta_{3}} } \quad;\quad M_{m3} = { {M_3 \cdot \eta} \cdot {\theta_{3} \over \theta_{m3} }  }
 $
 
 To solve, the values are replaced:
 
 $
-M_{m3} = { {104(d+e) \over 1} \cdot {1 \over 120 }  } = {0,87(d+e)} \quad  [\text N\cdot \text m]
+M_{m3} = { {104(d+e) \cdot 0.93} \cdot {1 \over 120 }  } = {0.806(d+e)} \quad  [\text N\cdot \text m]
 $
 
 ### Section a2
