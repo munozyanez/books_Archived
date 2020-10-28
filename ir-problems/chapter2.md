@@ -29,8 +29,8 @@ This motor-spindle assembly offers a reduction ratio of 2000 m-¹ which allows t
 
 The equations of the resolver are:
 
-* $V1 = V\cdot\sin(\omega t)\cdot\sin(\theta_m)$,
-* $V2 = V\cdot\sin(\omega t)\cdot\cos(\theta _m)$,
+ \cdot  $V1 = V\cdot\sin(\omega t)\cdot\sin(\theta_m)$,
+ \cdot  $V2 = V\cdot\sin(\omega t)\cdot\cos(\theta _m)$,
 
 being $\theta_m$ the angle in which the motor is located and $V\cdot(\omega t)$ the excitation voltage of the resolver moving coil with $V$=24V. The resolver initial values are set to $V1$=0V , $V2$=0V , $\theta_m$=0 , $\theta_{art}$=0.
 
@@ -49,8 +49,8 @@ The extension arm is at its minimum length when the arm is in the initial positi
 
 In the equilibrium, $T1$ and $T2$ are equal and opposite ($T1 = -T2$) , being:
 
-* $T1 = Q \cdot 1,2$
-* $T2 = F \cdot -0,25$ N·m
+ \cdot  $T1 = Q \cdot 1,2$
+ \cdot  $T2 = F \cdot -0,25$ N·m
 
 Dividing the above equations, it is obtained:
 
@@ -62,8 +62,8 @@ On the other hand, the balance of forces in the spindle can be easily done by an
 
 In the ideal situation, the energy transmitted by the motor to the spindle should be the same as that received by the arm. That is, $E_{rot} = E_{lin}$ , and in the general case $\eta \cdot E_{rot} = E_{lin}$, being:
 
-* $E_{rot} = M \cdot \theta_m$, where $\theta$ is the angle of rotation in radians.
-* $E_{lin} = F \cdot d$ , where $d$ is the linear distance traveled by the spindle.
+ \cdot  $E_{rot} = M \cdot \theta_m$, where $\theta$ is the angle of rotation in radians.
+ \cdot  $E_{lin} = F \cdot d$ , where $d$ is the linear distance traveled by the spindle.
 
 There are two unknowns for $Q$. One is the weight that the robot is capable of _supporting_ at its end, and the other is the weight that it is capable of _moving_.
 
@@ -93,8 +93,8 @@ The spindle transmission has the ratio ${d \over \theta_m} = {1\over2000}$ m/rad
 
 According to the figure, the trigonometric equations that relate $d$ to $\theta_{art}$ are
 
-* $h\cdot\sin{\theta_{art}} = d$
-* $h\cdot\cos{\theta_{art}} = 0,25$
+ \cdot  $h\cdot\sin{\theta_{art}} = d$
+ \cdot  $h\cdot\cos{\theta_{art}} = 0,25$
 
 Dividing these two equations, it results:
 
@@ -156,10 +156,10 @@ This means that the range of the joint is ($-65$ deg,$+65$ deg).
 
 Given the 5 DOF robot in the figure, calculate:
 
-* a) The joint 3 ($q_3$) is moved by an AC Motor - Brake - Harmonic Drive assembly, being the data of the latter: reduction ratio 120:1, efficiency of 93%.
+ \cdot  a) The joint 3 ($q_3$) is moved by an AC Motor - Brake - Harmonic Drive assembly, being the data of the latter: reduction ratio 120:1, efficiency of 93%.
     1. If the maximum static load to be carried by the robot is 80 Newton, what should be the maximum torque (N·m) to be supported by a brake located on the motor axis, applying a safety coefficient of 30%?
     2. If the motor is rotating at 900 rpm, at what speed is the joint rotating?
-* b) Joint 1 ($q_1$) is moved by an AC Motor - Brake - Resolver - Harmonic Drive - Rack and Pinion Transmission assembly. The Harmonic Drive has a ratio of $175:1$ and an efficiency of 95%. In the rack and pinion drive, the effective radius of the pinion is 0.3 m and its efficiency is 75%. Being $\theta_m$ the angle in which the motor is located and the excitation voltage of the resolver moving coil with $V=24$V.
+ \cdot  b) Joint 1 ($q_1$) is moved by an AC Motor - Brake - Resolver - Harmonic Drive - Rack and Pinion Transmission assembly. The Harmonic Drive has a ratio of $175:1$ and an efficiency of 95%. In the rack and pinion drive, the effective radius of the pinion is 0.3 m and its efficiency is 75%. Being $\theta_m$ the angle in which the motor is located and the excitation voltage of the resolver moving coil with $V=24$V.
 
     1. If we start from $\theta_m$=0 , and the motor advances in positive direction, indicating the resolver 350 steps by zero, giving final values in the stop instant of $V1$=17.32V , $V2$=10V. What is the value of $q_1$ in the stop point?
     2. What will be the linear speed of the joint if the motor turns at 110 rpm?
@@ -248,20 +248,20 @@ $
 v_1={0,3\over175}[m/rad] \cdot 115,19[rad/s]=0,20[m/s]
 $
 
-## Problema resuelto 3
+## Problem 3
 
 ![](.gitbook/assets/p3.svg)
 
-Para el robot de 2 GDL $\theta_1$ y $\theta_2$ de la figura anterior, diseñar los actuadores y sensores. Estos están compuestos, en cada eje, por un motor DC con encoder en su eje y un engranaje. Calcular:
+Consider the 2 DOF $\theta_1$ and $\theta_2$ in the figure, diseñar los actuadores y sensores. Estos están compuestos, en cada eje, por un motor DC con encoder en su eje y un engranaje. Calcular:
 
 1. Las reducciones que tienen que tener los reductores, si se conoce que:
-    * La velocidad máxima de los motores. $\dot\theta_{mi}=6000 \text{[rpm]}$.
-    * Al mover cada motor por separado estando el otro parado, la velocidad máxima de la trayectoria en el extremo del robot. $V_{max}=3000 \text{[mm/seg]}$.
-2. La resolución que tienen que tener los encoders de los ejes si se desea una precisión total de posicionamiento en el extremo de 0,01 \[mm\] $los reductores son de juego cero$.
+     \cdot  La velocidad máxima de los motores. $\dot\theta_{mi}=6000 \text{[rpm]}$.
+     \cdot  Al mover cada motor por separado estando el otro parado, la velocidad máxima de la trayectoria en el extremo del robot. $V_{max}=3000 \text{[mm/seg]}$.
+2. La resolución que tienen que tener los encoders de los ejes si se desea una precisión total de posicionamiento en el extremo de 0,01 \[mm\] los reductores son de juego cero.
 3. El máximo peso que puede levantar el robot en su extremo en las condiciones mas desfavorables, si se conoce que:
-    * El par motor nominal $continuo$ de cada motor es de $T_1=T_2=1$N·m.
-    * El coeficiente de aprovechamiento de los reductores es de $\eta=80\%$.
-    * Los motores no tienen frenos.
+     \cdot  El par motor nominal $continuo$ de cada motor es de $T_1=T_2=1$N·m.
+     \cdot  El coeficiente de aprovechamiento de los reductores es de $\eta=80\%$.
+     \cdot  Los motores no tienen frenos.
 
 ## Solución
 
@@ -270,18 +270,18 @@ Para el robot de 2 GDL $\theta_1$ y $\theta_2$ de la figura anterior, diseñar l
 Para ambas articulaciones, se debe cumplir que:
 
 $
-\dot\theta_{mi}R_i=\dot\theta_i
+\dot\theta_{mi}N_i=\dot\theta_i
 $
 
-Por otra parte, la velocidad lineal en el extremo opuesto a la articulación se calcula mediante la fórmula de movimiento circular del sólido rígido $$V_p=\dot\theta_i*d$$, siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido.
+Por otra parte, la velocidad lineal en el extremo opuesto a la articulación se calcula mediante la fórmula de movimiento circular del sólido rígido  $V_p=\dot\theta_i \cdot d $, siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido.
 
 Combinando las dos ecuaciones, se obtiene lo siguiente:
 
 $
-V_p=\dot\theta_{mi}R_i \cdot d
+V_p=\dot\theta_{mi}N_i \cdot d
 $
 
-Hay que prestar atención al hecho de que $d$ se refiere a la distancia del punto$$i$$ al eje de rotación, por tanto, una rotación en q1 genera velocidades lineales en todos los puntos del robot, y en particular $V_1$ y $V_2$.
+Hay que prestar atención al hecho de que $d$ se refiere a la distancia del punto $i$ al eje de rotación, por tanto, una rotación en q1 genera velocidades lineales en todos los puntos del robot, y en particular $V_1$ y $V_2$.
 
 El caso más desfavorable para $\theta_1$, coincide con el valor máximo de $d$, y esto ocurre con $\theta_2=0 \rightarrow d=1,2+2=3,2\text{[m]}$, y la velocidad en el extremo del robot, $V_2$. Particularizando la ecuación para este caso sería:
 
@@ -316,7 +316,7 @@ $
 $
 
 $
-{R_2}\le{ {3\text{[m/s]}}\over{628,32\text{[rad/s]}*2\text{[m]}} }={ {1}\over{418,88} }
+{R_2}\le{ {3\text{[m/s]}}\over{628,32\text{[rad/s]} \cdot 2\text{[m]}} }={ {1}\over{418,88} }
 $
 
 $
@@ -325,35 +325,35 @@ $
 
 ### Apartado 2
 
-El desplazamiento $X$ se calcula mediante la fórmula de movimiento circular del sólido rígido $$X_p=\theta_i*d$$, siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido. Teniendo en cuenta la reducción y el límite de desplazamiento resulta:
+El desplazamiento $X$ se calcula mediante la fórmula de movimiento circular del sólido rígido  $X_p=\theta_i \cdot d $, siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido. Teniendo en cuenta la reducción y el límite de desplazamiento resulta:
 
 $
-{X_p}={ \theta_{mi}*R_i*d }\le{ X_{min} }
+{X_p}={ \theta_{mi} \cdot R_i \cdot d }\le{ X_{min} }
 $
 
 Esto implica que:
 
 $
-{ \theta_{mi} }\le{ {X_{min}}\over{R_i*d} }
+{ \theta_{mi} }\le{ {X_{min}}\over{R_i \cdot d} }
 $
 
-La situación más desfavorable es la que provoca un desplazamiento mayor en el extremo $$X_2$$. Igual que en el apartado anterior, las distancias mas desfavorables son $d=3,2\text{[m]}$ para $\theta_1$ y $d=2\text{[m]}$ para $\theta_2$.
+La situación más desfavorable es la que provoca un desplazamiento mayor en el extremo  $X_2 $. Igual que en el apartado anterior, las distancias mas desfavorables son $d=3,2\text{[m]}$ para $\theta_1$ y $d=2\text{[m]}$ para $\theta_2$.
 
-Particularizando para $\theta_{m1}$, $$d=3,2\text{[m]}; {R_1}={1/700}$$
+Particularizando para $\theta_{m1}$,  $d=3,2\text{[m]}; {R_1}={1/700} $
 
 $
 { \theta_{m1} }\le
-{ {0,01\text{[mm]}}\over{(1/700)*3,2}\text{[m]} }=
-{ {0,01}\over{(1/700)*3,2} }\cdot{ {\text{[m]}}\over{1000\text{[m]}} }=
+{ {0,01\text{[mm]}}\over{(1/700) \cdot 3,2}\text{[m]} }=
+{ {0,01}\over{(1/700) \cdot 3,2} }\cdot{ {\text{[m]}}\over{1000\text{[m]}} }=
 2,19\times10^{-03}\text{[rad]}
 $
 
-Particularizando para $\theta_{m2}$, $$d=2\text{[m]}; {R_2}={1/500}$$
+Particularizando para $\theta_{m2}$,  $d=2\text{[m]}; {R_2}={1/500} $
 
 $
 { \theta_{m2} }\le
-{ {0,01\text{[mm]}}\over{(1/500)*2}\text{[m]} }=
-{ {0,01}\over{(1/500)*2} }\cdot{ {\text{[m]}}\over{1000\text{[m]}} }=
+{ {0,01\text{[mm]}}\over{(1/500) \cdot 2}\text{[m]} }=
+{ {0,01}\over{(1/500) \cdot 2} }\cdot{ {\text{[m]}}\over{1000\text{[m]}} }=
 2,50\times10^{-03}\text{[rad]}
 $
 
@@ -368,7 +368,7 @@ $
 Se puede comprobar ahora, que para un ángulo de $\theta_{m1}= 2,19\times10^{-03}\mathrm{[rad]}$, el desplazamiento es:
 
 $
-{X_p}={ 2,19\times10^{-03}\mathrm{[rad]}*\frac{1}{700}*3,2\mathrm{[m]}}={0,01\mathrm{[mm]}}\le{ X_{min} }
+{X_p}={ 2,19\times10^{-03}\mathrm{[rad]} \cdot \frac{1}{700} \cdot 3,2\mathrm{[m]}}={0,01\mathrm{[mm]}}\le{ X_{min} }
 $
 
 Hay que tener en cuenta, que el desplazamiento calculado corresponde al movimiento circular del manipulador. Como se puede apreciar en la siguiente figura, éste desplazamiento es mayor que el movimiento lineal.
@@ -378,13 +378,13 @@ Hay que tener en cuenta, que el desplazamiento calculado corresponde al movimien
 En concreto se corresponde con el siguiente cálculo:
 
 $
-{X_p}={ \sin(\theta_{mi}*R_i)*d }\le{ X_{min} }
+{X_p}={ \sin(\theta_{mi} \cdot R_i) \cdot d }\le{ X_{min} }
 $
 
 Y sustituyendo valores, resulta:
 
 $
-{X_p}={ \sin(2,19\times10^{-03}\mathrm{[rad]}*\frac{1}{700})*3,2\mathrm{[m]}}={0,01\mathrm{[mm]}}\le{ X_{min} }
+{X_p}={ \sin(2,19\times10^{-03}\mathrm{[rad]} \cdot \frac{1}{700}) \cdot 3,2\mathrm{[m]}}={0,01\mathrm{[mm]}}\le{ X_{min} }
 $
 
 ### Apartado 3
@@ -393,14 +393,14 @@ Para mover la articulación mediante el motor, se aplican la reducción y el ren
 
 $
 \eta = {E_{1} \over E_{m1}}=
-{ {M_1*\theta_{1}} \over { M_{m1}*\theta_{m1}} } \quad;\quad 
-M_{1} = { {M_{m1}*\eta}*{\theta_{m1} \over \theta_{1}} }
+{ {M_1 \cdot \theta_{1}} \over { M_{m1} \cdot \theta_{m1}} } \quad;\quad 
+M_{1} = { {M_{m1} \cdot \eta} \cdot {\theta_{m1} \over \theta_{1}} }
 $
 
 Para resolver, se sustituyen los valores:
 
 $
-M_{1} = { {1\mathrm{[N \cdot m]}*0,80}*\frac{700}{1} }=
+M_{1} = { {1\mathrm{[N \cdot m]} \cdot 0,80} \cdot \frac{700}{1} }=
 {560,00\mathrm{[N \cdot m]}}
 $
 
@@ -411,7 +411,7 @@ Haciendo el cálculo mecánico, que se deja como ejercicio, se demuestra que la 
 Por tanto la máxima carga que puede mover el robot en la posición mas desfavorable se calcula como sigue:
 
 $
-T_1={ P*d } \Rightarrow P=T_1/d
+T_1={ P \cdot d } \Rightarrow P=T_1/d
 $
 
 Y sustituyendo:
@@ -428,9 +428,9 @@ $
 El robot de la figura se mueve mediante un conjunto motor-encoder-reductor. El motor es de tipo AC, cuyo par máximo es de 1 \[N·m\], y la velocidad máxima es de 10000 rpm. El reductor es del tipo Harmonic Drive con relación d reducción de 150:1 y rendimiento del 90%.El encoder tiene 100 cuentas por vuelta. La distancia entre el eje del motor y el extremo del robot $l$ es de 1 \[m\].  
 Se pide:
 
-* a) Calcular el peso máximo $Q$ que puede llevar el robot en su extremo.
-* b) Calcular la resolución lineal del movimiento en el extremo del robot.
-* c) Si el motor gira a su velocidad máxima, ¿a qué velocidad angular $en \[grados/s\]$ está girando la articulación?
+ \cdot  a) Calcular el peso máximo $Q$ que puede llevar el robot en su extremo.
+ \cdot  b) Calcular la resolución lineal del movimiento en el extremo del robot.
+ \cdot  c) Si el motor gira a su velocidad máxima, ¿a qué velocidad angular $en \[grados/s\]$ está girando la articulación?
 
 ## Solución
 
@@ -439,7 +439,7 @@ Se pide:
 El par solicitado en el caso más desfavorable, es:
 
 $
-T_1=Q*l
+T_1=Q \cdot l
 $
 
 Que debe ser igual y de sentido contrario al par ejercido por la articulación.  
@@ -452,14 +452,14 @@ $
 Haciendo un balance de energía en la articulación:
 
 $
-\eta = {E_{1} \over E_{m1}} ={ {T_1*\theta_1} \over {T_{1m}*\theta_{1m}} }; \quad 
-T_1 = {\theta_{1m} \over \theta_{1}} * T_{1m} * \eta
+\eta = {E_{1} \over E_{m1}} ={ {T_1 \cdot \theta_1} \over {T_{1m} \cdot \theta_{1m}} }; \quad 
+T_1 = {\theta_{1m} \over \theta_{1}}  \cdot  T_{1m}  \cdot  \eta
 $
 
 Y sustituyendo los valores, resulta:
 
 $
-T_1 = { {150 \over 1}* 1\mathrm{[N \cdot m]} * 0,90} = 135 \mathrm{[N \cdot m]}
+T_1 = { {150 \over 1} \cdot  1\mathrm{[N \cdot m]}  \cdot  0,90} = 135 \mathrm{[N \cdot m]}
 $
 
 Teniendo en cuenta lo anterior:
@@ -472,18 +472,18 @@ $
 
 ### Apartado b
 
-La resolución lineal del robot se corresponde con el desplazamiento **lineal** mínimo en el manipulador en la situación más desfavorable. En este caso, no hay una posición mas desfavorable, así que culaquier posición vale para el cálculo. Se escogerá la cofiguración de $\theta=0$.
+La resolución lineal del robot se corresponde con el desplazamiento  \cdot  \cdot lineal \cdot  \cdot  mínimo en el manipulador en la situación más desfavorable. En este caso, no hay una posición mas desfavorable, así que culaquier posición vale para el cálculo. Se escogerá la cofiguración de $\theta=0$.
 
 En la siguiente figura se aprecia por qué el desplazamiento lineal en el manipulador se calcula de la siguiente manera:
 
 $
-{X_p}={ \sin(\theta_{1})*L }
+{X_p}={ \sin(\theta_{1}) \cdot L }
 $
 
 ![](.gitbook/assets/p8_1%20%281%29.svg)
 
 En el caso de la articulación, se sabe que la articulación tiene una reductora de 150:1.  
-El encoder tiene 100 cuentas por vuelta. Como no se sabe si estas cuentas son pulsos o cambios en el sistema de medida, se asume que son cambios en el sensor. Esto significa que se puede multiplicar por cuatro mediante cuadratura de la señal, luego $P_e=4*100=400\mathrm{[pulsos/vuelta]}$
+El encoder tiene 100 cuentas por vuelta. Como no se sabe si estas cuentas son pulsos o cambios en el sistema de medida, se asume que son cambios en el sensor. Esto significa que se puede multiplicar por cuatro mediante cuadratura de la señal, luego $P_e=4 \cdot 100=400\mathrm{[pulsos/vuelta]}$
 
 Entonces, el ángulo mínimo de giro para el motor, será:
 
@@ -491,16 +491,16 @@ $
 \theta_{m1p}={6,28\mathrm{[rad]}/400\mathrm{[pulsos]} }= { 0,0157 \mathrm{[rad/pulso]} }
 $
 
-Como ocurre que $\theta_{1p}=R_1*\theta_{m1p}$, se puede afirmar que:
+Como ocurre que $\theta_{1p}=R_1 \cdot \theta_{m1p}$, se puede afirmar que:
 
 $
-{X_p}={ \sin(R_1*\theta_{m1p})*L }
+{X_p}={ \sin(R_1 \cdot \theta_{m1p}) \cdot L }
 $
 
 Y después de sustituir valores, resulta:
 
 $
-{X_p}={ \sin(\frac{1}{150}*0,0157 \mathrm{[rad/pulso]})*1\mathrm{[m]} }=
+{X_p}={ \sin(\frac{1}{150} \cdot 0,0157 \mathrm{[rad/pulso]}) \cdot 1\mathrm{[m]} }=
 { 0,0001\mathrm{[m]}=0,1\mathrm{[mm]} }
 $
 
@@ -519,7 +519,7 @@ Por otro lado, se sabe que
 
 $
 {\dot\theta_{m1max}}=10000\mathrm{[rpm]} = 
-{ 10000\mathrm{[vuelta/min]}*\frac{360\mathrm{[\deg/vuelta]}}{60\mathrm{[s/min]}} }=
+{ 10000\mathrm{[vuelta/min]} \cdot \frac{360\mathrm{[\deg/vuelta]}}{60\mathrm{[s/min]}} }=
 {60000\mathrm{[\deg/s]}}
 $
 
