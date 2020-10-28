@@ -252,44 +252,44 @@ $
 
 ![](.gitbook/assets/p3.svg)
 
-Consider the 2 DOF $\theta_1$ and $\theta_2$ in the figure, diseñar los actuadores y sensores. Estos están compuestos, en cada eje, por un motor DC con encoder en su eje y un engranaje. Calcular:
+Consider the 2 DOF $\theta_1$ and $\theta_2$ in the figure, design the actuators and sensors. These are composed, in each axis, by a DC motor with encoder in its axis and a gear. Calculate:
 
-1. Las reducciones que tienen que tener los reductores, si se conoce que:
-     \cdot  La velocidad máxima de los motores. $\dot\theta_{mi}=6000 \text{[rpm]}$.
-     \cdot  Al mover cada motor por separado estando el otro parado, la velocidad máxima de la trayectoria en el extremo del robot. $V_{max}=3000 \text{[mm/seg]}$.
-2. La resolución que tienen que tener los encoders de los ejes si se desea una precisión total de posicionamiento en el extremo de 0,01 \[mm\] los reductores son de juego cero.
-3. El máximo peso que puede levantar el robot en su extremo en las condiciones mas desfavorables, si se conoce que:
-     \cdot  El par motor nominal $continuo$ de cada motor es de $T_1=T_2=1$N·m.
-     \cdot  El coeficiente de aprovechamiento de los reductores es de $\eta=80\%$.
-     \cdot  Los motores no tienen frenos.
+1. The reductions that the reducers must have, if it is known that:
+     * The maximum speed of the motors. $\dot\theta_{mi}=6000 \text{[rpm]}$.
+     * When moving each motor separately being the other stopped, the maximum speed of the path at the end of the robot. $V_{max}=3000 \text{[mm/sec]}$.
+2. The resolution that have to have the encoders of the axes if you want a total positioning accuracy at the end of 0.01 \[mm\] the gears are zero backlash.
+3. The maximum weight that can lift the robot in its end in the conditions but unfavorable, if it is known that:
+     * The nominal torque $continuous$ of each motor is $T_1=T_2=1$N·m.
+     * The coefficient of use of the reducers is of $\eta=80\%$.
+     * The motors have no brakes.
 
-## Solución
+## Solution
 
-### Apartado 1
+### Section 1
 
-Para ambas articulaciones, se debe cumplir que:
+For both joints, it must be fulfilled that
 
 $
 \dot\theta_{mi}N_i=\dot\theta_i
 $
 
-Por otra parte, la velocidad lineal en el extremo opuesto a la articulación se calcula mediante la fórmula de movimiento circular del sólido rígido  $V_p=\dot\theta_i \cdot d $, siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido.
+On the other hand, the linear velocity at the opposite end of the joint is calculated by the formula of circular motion of the rigid solid $V_p=\dot\theta_i \cdot d $, being $d$ the distance between the center of rotation and the point $p$ inside the solid.
 
-Combinando las dos ecuaciones, se obtiene lo siguiente:
+Combining the two equations, the following is obtained:
 
 $
 V_p=\dot\theta_{mi}N_i \cdot d
 $
 
-Hay que prestar atención al hecho de que $d$ se refiere a la distancia del punto $i$ al eje de rotación, por tanto, una rotación en q1 genera velocidades lineales en todos los puntos del robot, y en particular $V_1$ y $V_2$.
+Pay attention to the fact that $d$ refers to the distance from the point $i$ to the rotation axis, so a rotation in q1 generates linear velocities in all points of the robot, and in particular $V_1$ and $V_2$.
 
-El caso más desfavorable para $\theta_1$, coincide con el valor máximo de $d$, y esto ocurre con $\theta_2=0 \rightarrow d=1,2+2=3,2\text{[m]}$, y la velocidad en el extremo del robot, $V_2$. Particularizando la ecuación para este caso sería:
+The worst case for $\theta_1$, coincides with the maximum value of $d$, and this occurs with $\theta_2=0 \rightarrow d=1.2+2=3.2\text{[m]}$, and the speed at the end of the robot, $V_2$. Particularizing the equation for this case would be:
 
 $
 {V_2}={\dot\theta_{m1}R_1 \cdot 3,2}
 $
 
-Sustituyendo valores, y teniendo en cuenta que $V_2\le V_{max}$ y que $\dot\theta_{m1}=6000 \text{[rpm]}=628,32 \text{[rad/s]}$ resulta:
+Substituting values, and taking into account that $V_2\le V_{max}$ and that $\dot\theta_{m1}=6000 \text{[rpm]}=628.32 \text{[rad/s]}$ results:
 
 $
 {V_2}={628,32\text{[rad/s]}R_1\cdot3,2\text{[m]}}\le{3 \text{[m/s]}}
@@ -303,13 +303,13 @@ $
 {R_1}={ {1}\over{700} }
 $
 
-Para $\theta_2$, la distancia del punto más alejado es $d=2\text{[m]}$, y la velocidad en el extremo sigue siendo $V_2$. Particularizando la ecuación para este caso sería:
+For $\theta_2$, the distance from the farthest point is $d=2\text{[m]}$, and the speed at the end is still $V_2$. Particularizing the equation for this case would be
 
 $
 {V_2}={\dot\theta_{m2}R_2 \cdot 2}
 $
 
-Sustituyendo valores, y teniendo en cuenta que $V_2\le V_{max}$ y que $\dot\theta_{m2}=6000 \text{[rpm]}=628,32 \text{[rad/s]}$ resulta:
+Substituting values, and taking into account that $V_2\le V_{max}$ and that $\dot\theta_{m2}=6000 \text{[rpm]}=628.32 \text{[rad/s]}$ results:
 
 $
 {V_2}={628,32\text{[rad/s]}R_2 \cdot 2\text{[m]}}\le{3 \text{[m/s]}}
@@ -323,73 +323,11 @@ $
 {R_2}={ {1}\over{500} }
 $
 
-### Apartado 2
 
-El desplazamiento $X$ se calcula mediante la fórmula de movimiento circular del sólido rígido  $X_p=\theta_i \cdot d $, siendo $d$ la distancia entre el centro de rotación y el punto $p$ dentro del sólido. Teniendo en cuenta la reducción y el límite de desplazamiento resulta:
 
-$
-{X_p}={ \theta_{mi} \cdot R_i \cdot d }\le{ X_{min} }
-$
+### Section 3
 
-Esto implica que:
-
-$
-{ \theta_{mi} }\le{ {X_{min}}\over{R_i \cdot d} }
-$
-
-La situación más desfavorable es la que provoca un desplazamiento mayor en el extremo  $X_2 $. Igual que en el apartado anterior, las distancias mas desfavorables son $d=3,2\text{[m]}$ para $\theta_1$ y $d=2\text{[m]}$ para $\theta_2$.
-
-Particularizando para $\theta_{m1}$,  $d=3,2\text{[m]}; {R_1}={1/700} $
-
-$
-{ \theta_{m1} }\le
-{ {0,01\text{[mm]}}\over{(1/700) \cdot 3,2}\text{[m]} }=
-{ {0,01}\over{(1/700) \cdot 3,2} }\cdot{ {\text{[m]}}\over{1000\text{[m]}} }=
-2,19\times10^{-03}\text{[rad]}
-$
-
-Particularizando para $\theta_{m2}$,  $d=2\text{[m]}; {R_2}={1/500} $
-
-$
-{ \theta_{m2} }\le
-{ {0,01\text{[mm]}}\over{(1/500) \cdot 2}\text{[m]} }=
-{ {0,01}\over{(1/500) \cdot 2} }\cdot{ {\text{[m]}}\over{1000\text{[m]}} }=
-2,50\times10^{-03}\text{[rad]}
-$
-
-El menor de los dos valores $ $2,19\times10^{-03}\mathrm{[rad]}$ $ corresponde a la precisión mínima del encoder.
-
-Como hay 6,28 \[rad\] en cada vuelta completa y el menor de los valores es $\theta_{m1}= 2,19\times10^{-03}\text{[rad]}$:
-
-$
-P_e=\frac{6,28\mathrm{[rad/vuelta]}}{2,19\times10^{-03}\mathrm{[rad]}}=2872,31\mathrm{[pulsos/vuelta]}
-$
-
-Se puede comprobar ahora, que para un ángulo de $\theta_{m1}= 2,19\times10^{-03}\mathrm{[rad]}$, el desplazamiento es:
-
-$
-{X_p}={ 2,19\times10^{-03}\mathrm{[rad]} \cdot \frac{1}{700} \cdot 3,2\mathrm{[m]}}={0,01\mathrm{[mm]}}\le{ X_{min} }
-$
-
-Hay que tener en cuenta, que el desplazamiento calculado corresponde al movimiento circular del manipulador. Como se puede apreciar en la siguiente figura, éste desplazamiento es mayor que el movimiento lineal.
-
-![](.gitbook/assets/p3_2.svg)
-
-En concreto se corresponde con el siguiente cálculo:
-
-$
-{X_p}={ \sin(\theta_{mi} \cdot R_i) \cdot d }\le{ X_{min} }
-$
-
-Y sustituyendo valores, resulta:
-
-$
-{X_p}={ \sin(2,19\times10^{-03}\mathrm{[rad]} \cdot \frac{1}{700}) \cdot 3,2\mathrm{[m]}}={0,01\mathrm{[mm]}}\le{ X_{min} }
-$
-
-### Apartado 3
-
-Para mover la articulación mediante el motor, se aplican la reducción y el rendimiento de la transimsión. Dividiendo las dos ecuaciones de energía, y teniendo en cuenta que $\eta ={ E \over E_m }={ 0,80 }$ resulta que:
+To move the joint by means of the motor, the reduction and the performance of the transmission are applied. Dividing the two energy equations, and taking into account that $\eta ={ E \over E_m }={ 0.80 }$ results that:
 
 $
 \eta = {E_{1} \over E_{m1}}=
@@ -397,84 +335,82 @@ $
 M_{1} = { {M_{m1} \cdot \eta} \cdot {\theta_{m1} \over \theta_{1}} }
 $
 
-Para resolver, se sustituyen los valores:
+To solve, the values are replaced:
 
 $
 M_{1} = { {1\mathrm{[N \cdot m]} \cdot 0,80} \cdot \frac{700}{1} }=
 {560,00\mathrm{[N \cdot m]}}
 $
 
-Haciendo el cálculo mecánico, que se deja como ejercicio, se demuestra que la posición mas desfavorable es la que se muestra en la siguiente figura:
+Doing the mechanical calculation, it is demonstrated that the worst case position is the one shown in the following figure:
 
 ![](.gitbook/assets/p3_1.svg)
 
-Por tanto la máxima carga que puede mover el robot en la posición mas desfavorable se calcula como sigue:
+Therefore the maximum load that the robot can move in the most unfavorable position is calculated as follows:
 
 $
 T_1={ P \cdot d } \Rightarrow P=T_1/d
 $
 
-Y sustituyendo:
+And replacing:
 
 $
 P=\frac {560,00\mathrm{[N \cdot m]}} {3,2\mathrm{[m]}}=
 {175,00\mathrm{[N]} \rightarrow 17,84\mathrm{[Kg]}}
 $
 
-## Problema resuelto 4
+## Problem solved 4
 
 ![](.gitbook/assets/problema8.png)
 
-El robot de la figura se mueve mediante un conjunto motor-encoder-reductor. El motor es de tipo AC, cuyo par máximo es de 1 \[N·m\], y la velocidad máxima es de 10000 rpm. El reductor es del tipo Harmonic Drive con relación d reducción de 150:1 y rendimiento del 90%.El encoder tiene 100 cuentas por vuelta. La distancia entre el eje del motor y el extremo del robot $l$ es de 1 \[m\].  
-Se pide:
+The robot in the figure is moved by a motor-encoder-reducer assembly. The motor is AC type, whose maximum torque is 1 \[Nm\], and the maximum speed is 10,000 rpm. The gear is of the Harmonic Drive type with a reduction ratio of 150:1 and efficiency of 90%. The encoder has 100 beads per turn. The distance between the motor shaft and the end of the robot $l$ is 1 ? It is ordered:
 
- \cdot  a) Calcular el peso máximo $Q$ que puede llevar el robot en su extremo.
- \cdot  b) Calcular la resolución lineal del movimiento en el extremo del robot.
- \cdot  c) Si el motor gira a su velocidad máxima, ¿a qué velocidad angular $en \[grados/s\]$ está girando la articulación?
+     * a) Calculate the maximum weight $Q$ that can take the robot in its end.
+     * b) Calculate the linear resolution of the movement in the end of the robot.
+     * c) If the motor turns to its maximum speed, to what angular speed [deg/s] is turning the joint?
 
-## Solución
+## Solution
 
-### Apartado a
+### Section a
 
-El par solicitado en el caso más desfavorable, es:
+The pair requested in the worst case is:
 
 $
 T_1=Q \cdot l
 $
 
-Que debe ser igual y de sentido contrario al par ejercido por la articulación.  
-Por lo tanto:
+It must be equal and opposite to the torque exerted by the joint.
+Therefore:
 
 $
 { Q = T_1/l }
 $
 
-Haciendo un balance de energía en la articulación:
+Making an energy balance in the joint:
 
 $
-\eta = {E_{1} \over E_{m1}} ={ {T_1 \cdot \theta_1} \over {T_{1m} \cdot \theta_{1m}} }; \quad 
+\eta = {E_{1} \over E_{m1}} ={ {T_1 \cdot \theta_1} \over {T_{1m} \cdot \theta_{1m}} }; \quad
 T_1 = {\theta_{1m} \over \theta_{1}}  \cdot  T_{1m}  \cdot  \eta
 $
 
-Y sustituyendo los valores, resulta:
+And replacing the values, it turns out:
 
 $
 T_1 = { {150 \over 1} \cdot  1\mathrm{[N \cdot m]}  \cdot  0,90} = 135 \mathrm{[N \cdot m]}
 $
 
-Teniendo en cuenta lo anterior:
-
+Considering the above:
 $
-{ Q = T_1/l } = 
+{ Q = T_1/l } =
 {135 \mathrm{[N \cdot m]} / 1 \mathrm{[m]}}=
 135 \mathrm{[N]}
 $
 
 ### Apartado b
 
-La resolución lineal del robot se corresponde con el desplazamiento  \cdot  \cdot lineal \cdot  \cdot  mínimo en el manipulador en la situación más desfavorable. En este caso, no hay una posición mas desfavorable, así que culaquier posición vale para el cálculo. Se escogerá la cofiguración de $\theta=0$.
+The linear resolution of the robot corresponds to the minimum  displacement in the manipulator in the most unfavorable situation. In this case, there is not a position better or worse, so any position is valid for the calculation. The setting of $\theta=0$ will be chosen.
 
-En la siguiente figura se aprecia por qué el desplazamiento lineal en el manipulador se calcula de la siguiente manera:
+The following figure shows why the linear displacement in the manipulator is calculated as follows:
 
 $
 {X_p}={ \sin(\theta_{1}) \cdot L }
@@ -482,53 +418,52 @@ $
 
 ![](.gitbook/assets/p8_1%20%281%29.svg)
 
-En el caso de la articulación, se sabe que la articulación tiene una reductora de 150:1.  
-El encoder tiene 100 cuentas por vuelta. Como no se sabe si estas cuentas son pulsos o cambios en el sistema de medida, se asume que son cambios en el sensor. Esto significa que se puede multiplicar por cuatro mediante cuadratura de la señal, luego $P_e=4 \cdot 100=400\mathrm{[pulsos/vuelta]}$
+In the case of the joint, the joint is known to have a 150:1 reduction ratio.
+The encoder has 100 beads per turn. Since it is not known whether these counts are pulses or changes in the measurement system, it is assumed that they are changes in the sensor. This means that they can be multiplied by four by quadrature of the signal, then $P_e=4 \cdot 100=400\mathrm{[pulses/turn]}$
 
-Entonces, el ángulo mínimo de giro para el motor, será:
+Then, the minimum turning angle for the engine will be:
 
 $
-\theta_{m1p}={6,28\mathrm{[rad]}/400\mathrm{[pulsos]} }= { 0,0157 \mathrm{[rad/pulso]} }
+\theta_{m1p}={6,28\mathrm{[rad]}/400\mathrm{[pulse]} }= { 0,0157 \mathrm{[rad/pulse]} }
 $
 
-Como ocurre que $\theta_{1p}=R_1 \cdot \theta_{m1p}$, se puede afirmar que:
+As it happens that $\theta_{1p}=R_1 \cdot \theta_{m1p}$, it can be said that
 
 $
 {X_p}={ \sin(R_1 \cdot \theta_{m1p}) \cdot L }
 $
 
-Y después de sustituir valores, resulta:
+And after replacing values, it results:
 
 $
-{X_p}={ \sin(\frac{1}{150} \cdot 0,0157 \mathrm{[rad/pulso]}) \cdot 1\mathrm{[m]} }=
+{X_p}={ \sin(\frac{1}{150} \cdot 0,0157 \mathrm{[rad/pulse]}) \cdot 1\mathrm{[m]} }=
 { 0,0001\mathrm{[m]}=0,1\mathrm{[mm]} }
 $
 
-Se deja como ejercicio calcular el desplazamiento para movimiento circular y compararlo con el desplazamiento lineal del manipulador.
+It is proposed as an additional exercise to calculate the displacement for circular movement and compare it with the linear displacement of the manipulator.
 
-### Apartado c
+### Section c
 
-Conociendo la relación de transmisión del engranaje, se puede afirmar que:
+Knowing the transmission ratio of the gear, it can be said that:
 
 $
 { \frac{\dot\theta_{1}}{\dot\theta_{m1}} }={ R_1 }={ \frac{1}{150} };\quad
 { \dot\theta_{1} }={ \frac{\dot\theta_{m1}}{150} }
 $
 
-Por otro lado, se sabe que
+On the other hand, it is known that
 
 $
 {\dot\theta_{m1max}}=10000\mathrm{[rpm]} = 
-{ 10000\mathrm{[vuelta/min]} \cdot \frac{360\mathrm{[\deg/vuelta]}}{60\mathrm{[s/min]}} }=
+{ 10000\mathrm{[rev/min]} \cdot \frac{360\mathrm{[\deg/rev]}}{60\mathrm{[s/min]}} }=
 {60000\mathrm{[\deg/s]}}
 $
 
-Entonces, sustituyendo, se tiene que:
-
+Then, replacing, you have to:
 $
 { \dot\theta_{1} }={ \frac{60000\mathrm{[\deg/s]}}{150} }=
 {400\mathrm{[\deg/s]}}
 $
 
-Fin del capítulo.
+
 
