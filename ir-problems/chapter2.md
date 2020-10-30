@@ -17,7 +17,7 @@ MathJax = {
 
 ## Problema resuelto 1
 
-![](.gitbook/assets/p1%20%281%29.svg)
+![](.gitbook/assets/p1%20%281%29.svg )
 
 The mechanism of the figure consists of a parallelogram transmission moving the joint of a robot.
 
@@ -29,8 +29,8 @@ This motor-spindle assembly offers a reduction ratio of 2000 m-¹ which allows t
 
 The equations of the resolver are:
 
- \cdot  $V1 = V\cdot\sin(\omega t)\cdot\sin(\theta_m)$,
- \cdot  $V2 = V\cdot\sin(\omega t)\cdot\cos(\theta _m)$,
+ *  $V1 = V\cdot\sin(\omega t)\cdot\sin(\theta_m)$,
+ *  $V2 = V\cdot\sin(\omega t)\cdot\cos(\theta _m)$,
 
 being $\theta_m$ the angle in which the motor is located and $V\cdot(\omega t)$ the excitation voltage of the resolver moving coil with $V$=24V. The resolver initial values are set to $V1$=0V , $V2$=0V , $\theta_m$=0 , $\theta_{art}$=0.
 
@@ -49,8 +49,8 @@ The extension arm is at its minimum length when the arm is in the initial positi
 
 In the equilibrium, $T1$ and $T2$ are equal and opposite ($T1 = -T2$) , being:
 
- \cdot  $T1 = Q \cdot 1,2$
- \cdot  $T2 = F \cdot -0,25$ N·m
+ *  $T1 = Q \cdot 1,2$
+ *  $T2 = F \cdot -0,25$ N·m
 
 Dividing the above equations, it is obtained:
 
