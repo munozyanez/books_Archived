@@ -17,7 +17,7 @@ MathJax = {
 
 ## Problema resuelto 1
 
-![](.gitbook/assets/p1%20%281%29.svg)
+![](.gitbook/assets/p1%20%281%29.svg )
 
 The mechanism of the figure consists of a parallelogram transmission moving the joint of a robot.
 
