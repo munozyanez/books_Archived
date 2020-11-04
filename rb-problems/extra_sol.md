@@ -65,9 +65,7 @@ $
 135 \mathrm{[N]}
 $
 
-### Section b
-
-The linear resolution of the robot corresponds to the minimum  displacement in the manipulator in the most unfavorable situation. In this case, there is not a position better or worse, so any position is valid for the calculation. The setting of $\theta=0$ will be chosen.
+The linear resolution of the robot corresponds to the minimum  displacement in the manipulator in the worst case situation. As there is not a position better or worse for that robot, any position is valid for the calculation. For instance, $\theta=0$ will be chosen.
 
 The following figure shows why the linear displacement in the manipulator is calculated as follows:
 
@@ -80,16 +78,16 @@ $
 In the case of the joint, the joint is known to have a 150:1 reduction ratio.
 The encoder has 100 beads per turn. Since it is not known whether these counts are pulses or changes in the measurement system, it is assumed that they are changes in the sensor. This means that they can be multiplied by four by quadrature of the signal, then $P_e=4 \cdot 100=400\mathrm{[pulses/turn]}$
 
-Then, the minimum turning angle for the engine will be:
+Then, the minimum angle at the motor side will be:
 
 $
 \theta_{m1p}={6,28\mathrm{[rad]}/400\mathrm{[pulse]} }= { 0,0157 \mathrm{[rad/pulse]} }
 $
 
-As it happens that $\theta_{1p}=R_1 \cdot \theta_{m1p}$, it can be said that
+As $\theta_{1p}=\frac{1}{N_1} \cdot \theta_{m1p}$, it results:
 
 $
-{X_p}={ \sin(R_1 \cdot \theta_{m1p}) \cdot L }
+{X_p}={ \sin(\frac{1}{N_1} \cdot \theta_{m1p}) \cdot L }
 $
 
 And after replacing values, it results:
@@ -106,7 +104,7 @@ It is proposed as an additional exercise to calculate the displacement for circu
 Knowing the transmission ratio of the gear, it can be said that:
 
 $
-{ \frac{\dot\theta_{1}}{\dot\theta_{m1}} }={ R_1 }={ \frac{1}{150} };\quad
+{ \frac{\dot\theta_{m1}}{\dot\theta_{1}} }={ N_1 }={ {150} };\quad
 { \dot\theta_{1} }={ \frac{\dot\theta_{m1}}{150} }
 $
 
@@ -118,11 +116,47 @@ $
 {60000\mathrm{[\deg/s]}}
 $
 
-Then, replacing, you have to:
+Then, replacing results in:
 $
 { \dot\theta_{1} }={ \frac{60000\mathrm{[\deg/s]}}{150} }=
 {400\mathrm{[\deg/s]}}
 $
+
+
+### Section d
+
+Using the reasoning shown in the section b, we can say that:
+
+$
+{X_p}={ \sin(\frac{1}{N_1} \cdot \theta_{m1p}) \cdot L }=10^{-5}
+$
+
+Rearranging and taking $\arcsin$,
+
+$
+\frac{\theta_{m1p}}{N_1} = \arcsin(\frac{10^{-5}}{L}) = 0.000573 \mathrm{[deg]}
+$
+
+and then,
+
+$
+\theta_{m1p} = N_1 \cdot 0.000573 = 0.086 \mathrm{[deg]}
+$
+
+Therefore, we need to send a pulse when the angle changes $\theta_{m1p}$, which in a complete turn makes the following number of pulses:
+
+$
+\frac{360 \mathrm{[deg/turn]}} {\theta_{m1p}\mathrm{[deg/pulse]}} = 4186.04 \mathrm{[pulses/turn]}
+$
+
+Using a quadrature encoder, we have four pulses per line, therefore, the number of lines are the pulses divided by four, then:
+
+$
+\frac{4186.04 \mathrm{[pulses/turn]}}{4 \mathrm{[pulses/line]}} = 1046.5 \mathrm{[lines/turn]} \approx 1047 \mathrm{\quad lines}
+$
+
+
+
 
 
 
